@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: aquamarine;
+            }
+        </style>
     </head>
     <body>
         <h2>Texto de prueba plantilla 1</h2>
+        <p>Mi nombre es: {{nombre_persona}} {{apellido_persona}} tengo {{edad}} anios</p>
+        <p>La fecha actual es: {{fecha_actual.day}} / {{fecha_actual.month}} / {{fecha_actual.year}}</p>
     </body>
 </html>
