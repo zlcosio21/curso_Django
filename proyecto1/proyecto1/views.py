@@ -13,6 +13,8 @@ def saludo(request): # Primera vista
 
     persona1 = Persona("Sebastian Andres", "Gomez Sobrino", 2006)
 
+    lista_temas_curso = ["Plantillas", "Modelos", "Formularios", "Vistas", "Despliegues"]
+
     hora_actual = datetime.datetime.now()
 
     plt = Template(doc_externo.read())
@@ -23,7 +25,8 @@ def saludo(request): # Primera vista
         "nombre_persona":persona1.nombre,
         "apellido_persona":persona1.apellido,
         "fecha_actual":hora_actual,
-        "edad":persona1.agno_nacimiento
+        "edad":persona1.agno_nacimiento,
+        "temas":lista_temas_curso
         })
 
     documento = plt.render(ctx)

@@ -14,5 +14,18 @@
         <h2>Texto de prueba plantilla 1</h2>
         <p>Mi nombre es: {{nombre_persona}} {{apellido_persona}} tengo {{edad}} anios</p>
         <p>La fecha actual es: {{fecha_actual.day}} / {{fecha_actual.month}} / {{fecha_actual.year}}</p>
+        <p><strong>Temas del curso:</strong></p>
+        <ul>
+            {% if temas %}
+                {% for i in temas %}
+
+                    <li>{{i}}</li>
+
+                {% endfor %}
+            {% else %}
+                <p>No hay temas del curso por el momento</p>
+            {% endif %}
+
+        </ul>
     </body>
 </html>
