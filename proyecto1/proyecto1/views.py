@@ -1,7 +1,6 @@
 from django.http import HttpResponse
 import datetime
-from django.template import Template, Context 
-from django.template.loader import get_template
+from django.shortcuts import render
 
 class Persona:
     def __init__(self, nombre, apellido, agno_nacimiento):
@@ -17,17 +16,13 @@ def saludo(request): # Primera vista
 
     hora_actual = datetime.datetime.now()
 
-    doc_externo = get_template("plantilla1.html")
-
-    documento = doc_externo.render({
+    return render(request, "plantilla1.html", {
         "nombre_persona":persona1.nombre,
         "apellido_persona":persona1.apellido,
         "fecha_actual":hora_actual,
         "edad":persona1.agno_nacimiento,
         "temas":lista_temas_curso
         })
-
-    return HttpResponse(documento)
 
 def despedida(request):
 
