@@ -12,6 +12,15 @@
     </head>
     <body>
         <h2>Texto de prueba plantilla 1</h2>
+        {% if nombre_persona == "Sebastian Andres" %}
+
+            <p>Realizando el curso {{nombre_persona}}</p>
+
+        {% else %}
+
+            <p>???</p>
+
+        {% endif %}
         <p>Mi nombre es: {{nombre_persona}} {{apellido_persona}} tengo {{edad}} anios</p>
         <p>La fecha actual es: {{fecha_actual.day}} / {{fecha_actual.month}} / {{fecha_actual.year}}</p>
         <p><strong>Temas del curso:</strong></p>
