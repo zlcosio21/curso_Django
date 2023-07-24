@@ -24,6 +24,10 @@ def saludo(request): # Primera vista
         "temas":lista_temas_curso
         })
 
+def pruebaHerencia(request):
+
+    return render(request, "prueba_herencia.html")    
+
 def despedida(request):
 
     return HttpResponse("See you later")
