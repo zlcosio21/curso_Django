@@ -4,8 +4,11 @@ from django.db import models
 class cliente(models.Model):
     nombre = models.CharField(max_length=30)
     direccion = models.CharField(max_length=50)
-    correo = models.EmailField(blank=True, null=True)
+    correo = models.EmailField(blank=True, null=True, verbose_name="Correo")
     telefono = models.CharField(max_length=30)
+
+    def __str__(self):
+        return "%s, %s, %s, %s" % (self.nombre, self.direccion, self.correo, self.telefono)
 
 class articulo(models.Model):
     nombre = models.CharField(max_length=30)
