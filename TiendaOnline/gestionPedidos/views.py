@@ -9,11 +9,12 @@ def busqueda_productos(request):
 
 def buscar(request):
     if request.GET["producto"]:
-       
-       #mensaje = "Articulo buscado: %r" %request.GET["producto"]
        producto = request.GET["producto"]
-       articulos = articulo.objects.filter(nombre__icontains = producto)
-       return render(request, "resultado_busqueda.html", {"articulos":articulos, "query":producto,})
+       if len(producto) < 20:
+          articulos = articulo.objects.filter(nombre__icontains = producto)
+          return render(request, "resultado_busqueda.html", {"articulos":articulos, "query":producto,})
+       else:
+           mensaje = "El numero de caracteres es muy grande"
     else:
-        mensaje = "No se ha encontrado nada"
+        mensaje = "No se ha introducido nada"
     return HttpResponse(mensaje)
